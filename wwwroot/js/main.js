@@ -22,8 +22,7 @@ const fetchUser = async user => {
         if(d.message){
             errorMessage.style.display="block";
         }else{
-            errorMessage.style.display="none";
-            console.log(d)
+            errorMessage.style.display="none";           
             gitName.innerHTML = d.name ? d.name : "This profile has no name!";
             gitTag.innerHTML = "@"+d.login;
             gitBio.innerHTML = d.bio ? d.bio : "This profile has no bio"; 
