@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+$lightBlue: #0079FF;
+$darkBlue: #4B6A9B; 
+$grey: #697C9A;
+$lightGrey: #F6F8FF;
+$black: #2B3442;
+$white: #FEFEFE;
+$active: #222731;
+
+//darkmode
+$DMwhite: #ffffff;
+$DMblack: #141D2F;
+$DMdarkBlue: #1E2A47;
+
+*{box-sizing: border-box;}
+html{font-size: 62.5%;}
+body, button{font-family: 'Space Mono', monospace;}
+body{margin: 0;}
+p, h1, h2, h3, h4, h5, h6{margin: 0;}
+a{text-decoration: none;}
+ul{margin: 0; padding: 0;
+  li{list-style: none;}
+}
+#app {-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+main{display: grid; place-items: center; height: 100vh; background-color: #F5F8FF;
+  .container{max-width: 730px; width: 100%; margin: 0 auto; padding-bottom: 26px;
+    img{display: block; max-width: 100%;}
+    header{display: flex; align-items: center; justify-content: space-between;
+      h1{font-size: 2.6rem; font-weight: 700; color:$active;}
+      .mode{display: flex; align-items: center; justify-content: center; cursor: pointer;
+        span, path{transition: 0.2s; will-change: fill, color;}
+        span{font-size: 1.3rem; font-weight: 700; letter-spacing: 2.5px; color:$grey;}
+        svg{margin-left: 14px;
+          path{fill: $grey;}
+          &.light{display: none;}
+        }
+        &:hover{
+          span{color:$active;}
+          svg{
+            path{fill:$active;}
+          }
+        }
+      }
+    }
+
+    .search{display: flex; align-items: center; justify-content: space-between; padding: 9px 9px 9px 32px; background-color: $white; height: 69px; box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567); border-radius: 15px; margin:36px 0 24px;
+      div{display: flex; align-items: center; justify-content: center; flex: 1; height: 100%;
+        .error{color: #F74646; font-size: 1.5rem; font-weight: 700; white-space: nowrap; padding-right: 24px; display: none;
+          @media(max-width:500px){font-size: 1.3rem; padding-right: 10px;}
+        } 
+        input[type="text"]{width: 100%; border:none; height: 100%; padding: 0 40px 0 22px; font-size: 1.8rem; color: $active; font-family: 'Space Mono', monospace;
+          &:focus-visible{outline: none;}
+          &::-webkit-input-placeholder{font-size: 1.8rem; font-family: 'Space Mono', monospace; color:$darkBlue;}
+          &::-moz-placeholder{font-size: 1.8rem; font-family: 'Space Mono', monospace; color:$darkBlue;}
+          &:-ms-input-placeholder{font-size: 1.8rem; font-family: 'Space Mono', monospace; color:$darkBlue;}
+          &:-moz-placeholder{font-size: 1.8rem; font-family: 'Space Mono', monospace; color:$darkBlue;}
+          @media(max-width:500px){font-size: 1.2rem;
+            &::-webkit-input-placeholder{font-size: 1.2rem;}
+            &::-moz-placeholder{font-size: 1.2rem;}
+            &:-ms-input-placeholder{font-size: 1.2rem;}
+            &:-moz-placeholder{font-size: 1.2rem;}
+          }
+        }
+        @media(max-width:500px){
+          img{width: 20px;}
+          input[type="text"]{padding: 0 10px 0 10px;}
+        }
+      }      
+      button{border:none; transition: background-color 0.2s; will-change: background-color; background-color: $lightBlue; height: 100%; font-size: 1.6rem; font-weight: 700; color:white; cursor: pointer; padding: 0 24px; border-radius: 10px;
+        &:hover{background-color: #60ABFF;}
+        @media(max-width:500px){font-size: 1.4rem; padding: 0 16px;}
+      }
+      @media(max-width:500px){height: 60px; padding: 9px 9px 9px 13px;}
+    }
+
+    .git-user{display: flex; justify-content: flex-start; padding: 48px 48px 47px 48px; box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567); border-radius: 15px; background-color: $white;
+      .git-user-image{height: 117px; width: 117px; border-radius: 100%; overflow: hidden;}
+      .git-user-right{padding: 0 0 0 37px; flex:1;
+        .git-user-titles{display: flex; align-items: center; justify-content: space-between;
+          h2{font-size: 2.6rem; font-weight: 700; line-height: 30px;}
+          label{font-size: 1.5rem; color:$grey;}
+        }
+        span{font-size: 1.6rem; color: $lightBlue; display: block; margin: 7px 0 20px;}
+        p{font-size: 1.5rem; line-height: 25px; color: $darkBlue;}
+        .git-user-stats{display: flex; align-items: center; justify-content: space-between; margin: 32px 0 39px; background-color: #f6f8ff; padding: 15px 31px; border-radius: 10px;
+          li{flex: 1;
+            label{display: block; font-size: 1.3rem; color: $darkBlue;}
+            span{font-size: 1.5rem; font-size: 2.2rem; font-weight: 800; color: $black; margin: 0;}
+            &:last-child{position: relative; left: 15px;}
+          }
+        }
+        .git-user-footer{
+          ul{display: flex; align-items: center; flex-wrap: wrap; row-gap: 20px; column-gap: 65px;       
+            li{flex: 1; display: flex; align-items: center; font-size: 1.5rem; color: $darkBlue; 
+              a{color:inherit; width: 175px; overflow: hidden; display: block;
+                &:hover{text-decoration: underline;}
+              }
+              svg{margin-right: 19px;              
+                path{fill:$darkBlue;}                
+              }              
+              &:nth-child(3), &:nth-child(2){label{margin-left: -3px;}}
+              &:last-child{margin-top: -9px; label{margin: -2px 0 0px -3px;}}
+              &.unavailable{opacity: 0.5;}
+            }
+          }
+        }
+      }
+      @media(max-width:768px){position: relative; padding: 40px 40px 40px 40px;
+        .git-user-image{position: absolute; top:40px; left:40px;}
+        .git-user-right{padding-left: 0;
+          .git-user-titles{flex-direction: column; align-items: flex-start; padding-left: 150px; padding-top: 7px;
+            label{margin: 5px 0 2px;}
+          }
+          span{padding-left: 150px; margin-top: 0; margin-bottom: 44px;}
+          .git-user-stats{margin: 32px 0;
+            li{
+              span{padding-left: 0;}
+            }
+          }
+        }
+      }
+
+      @media(max-width:500px){padding: 32px 24px 48px 24px;
+        .git-user-image{height: 70px; width: 70px; top:31px; left:24px;}
+        .git-user-right{
+          .git-user-titles{padding-left: 90px; padding-top: 2px;        
+            h2{font-size: 1.6rem; line-height: 23px;}
+            label{font-size: 1.3rem; margin: 0 ;}           
+          }
+          p{font-size: 1.3rem;}   
+          span{font-size: 1.3rem; padding-left: 90px; margin-bottom: 30px;}
+          .git-user-stats{margin: 24px 0; padding: 15px 15px;
+            li{text-align: center;
+              label{font-size: 1.1rem;}
+              span{font-size: 1.6rem;}
+              &:last-child{left:0;}              
+            }
+          }
+          .git-user-footer{
+            ul{row-gap: 15px; column-gap: 0; flex-direction: column; align-items: flex-start;
+              li{font-size: 1.3rem;
+                &:nth-child(3), &:nth-child(2){label{margin-left: 0;}}
+                &:last-child{margin-top: 0; label{margin: 0;}}
+              }
+            }            
+          }
+        }
+      }
+    }
+    @media(max-width:768px){max-width: 621px; padding: 0 24px;}
+  }  
+  
+  &.dark{background-color: $DMblack;
+    .container{
+      header{
+        h1{color:white;}
+        .mode{
+          span{color:white;}
+          svg{
+            path{fill:white;}
+            &.dark{display: none;}
+            &.light{display: block;}
+          }
+          &:hover{
+            opacity: 0.5;
+          }
+        }
+      }
+      .search{background-color: $DMdarkBlue; box-shadow: none;
+        div{
+          input[type="text"]{background-color: $DMdarkBlue; color:white;
+            &::-webkit-input-placeholder{color:white;}
+            &::-moz-placeholder{color:white;}
+            &:-ms-input-placeholder{color:white;}
+            &:-moz-placeholder{color:white;}
+          }
+        }
+      }
+      .git-user{background-color: $DMdarkBlue; box-shadow: none;
+        .git-user-right{
+          .git-user-titles{
+            label, h2{color:white;}
+          }
+          p{color:white;}
+          span{color:$lightBlue;}
+          .git-user-stats{background-color: $DMblack;
+            li{
+              label, span{color:white;}
+            }
+          }
+          .git-user-footer{
+            ul{
+              li{
+                svg{
+                  path{fill:white;}
+                }
+                label{color:white;}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

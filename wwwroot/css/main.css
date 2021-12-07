@@ -1,0 +1,648 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body, button {
+  font-family: 'Space Mono', monospace;
+}
+
+body {
+  margin: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: #F5F8FF;
+}
+
+main .container {
+  max-width: 730px;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 26px;
+}
+
+main .container img {
+  display: block;
+  max-width: 100%;
+}
+
+main .container header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .container header h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #222731;
+}
+
+main .container header .mode {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+main .container header .mode span, main .container header .mode path {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  will-change: fill, color;
+}
+
+main .container header .mode span {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #697C9A;
+}
+
+main .container header .mode svg {
+  margin-left: 14px;
+}
+
+main .container header .mode svg path {
+  fill: #697C9A;
+}
+
+main .container header .mode svg.light {
+  display: none;
+}
+
+main .container header .mode:hover span {
+  color: #222731;
+}
+
+main .container header .mode:hover svg path {
+  fill: #222731;
+}
+
+main .container .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 9px 9px 9px 32px;
+  background-color: #FEFEFE;
+  height: 69px;
+  -webkit-box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+          box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+  border-radius: 15px;
+  margin: 36px 0 24px;
+}
+
+main .container .search div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+}
+
+main .container .search div .error {
+  color: #F74646;
+  font-size: 1.5rem;
+  font-weight: 700;
+  white-space: nowrap;
+  padding-right: 24px;
+  display: none;
+}
+
+@media (max-width: 500px) {
+  main .container .search div .error {
+    font-size: 1.3rem;
+    padding-right: 10px;
+  }
+}
+
+main .container .search div input[type="text"] {
+  width: 100%;
+  border: none;
+  height: 100%;
+  padding: 0 40px 0 22px;
+  font-size: 1.8rem;
+  color: #222731;
+  font-family: 'Space Mono', monospace;
+}
+
+main .container .search div input[type="text"]:focus-visible {
+  outline: none;
+}
+
+main .container .search div input[type="text"]::-webkit-input-placeholder {
+  font-size: 1.8rem;
+  font-family: 'Space Mono', monospace;
+  color: #4B6A9B;
+}
+
+main .container .search div input[type="text"]::-moz-placeholder {
+  font-size: 1.8rem;
+  font-family: 'Space Mono', monospace;
+  color: #4B6A9B;
+}
+
+main .container .search div input[type="text"]:-ms-input-placeholder {
+  font-size: 1.8rem;
+  font-family: 'Space Mono', monospace;
+  color: #4B6A9B;
+}
+
+main .container .search div input[type="text"]:-moz-placeholder {
+  font-size: 1.8rem;
+  font-family: 'Space Mono', monospace;
+  color: #4B6A9B;
+}
+
+@media (max-width: 500px) {
+  main .container .search div input[type="text"] {
+    font-size: 1.2rem;
+  }
+  main .container .search div input[type="text"]::-webkit-input-placeholder {
+    font-size: 1.2rem;
+  }
+  main .container .search div input[type="text"]::-moz-placeholder {
+    font-size: 1.2rem;
+  }
+  main .container .search div input[type="text"]:-ms-input-placeholder {
+    font-size: 1.2rem;
+  }
+  main .container .search div input[type="text"]:-moz-placeholder {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  main .container .search div img {
+    width: 20px;
+  }
+  main .container .search div input[type="text"] {
+    padding: 0 10px 0 10px;
+  }
+}
+
+main .container .search button {
+  border: none;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  will-change: background-color;
+  background-color: #0079FF;
+  height: 100%;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  padding: 0 24px;
+  border-radius: 10px;
+}
+
+main .container .search button:hover {
+  background-color: #60ABFF;
+}
+
+@media (max-width: 500px) {
+  main .container .search button {
+    font-size: 1.4rem;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  main .container .search {
+    height: 60px;
+    padding: 9px 9px 9px 13px;
+  }
+}
+
+main .container .git-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 48px 48px 47px 48px;
+  -webkit-box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+          box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+  border-radius: 15px;
+  background-color: #FEFEFE;
+}
+
+main .container .git-user .git-user-image {
+  height: 117px;
+  width: 117px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+main .container .git-user .git-user-right {
+  padding: 0 0 0 37px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+main .container .git-user .git-user-right .git-user-titles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .container .git-user .git-user-right .git-user-titles h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+main .container .git-user .git-user-right .git-user-titles label {
+  font-size: 1.5rem;
+  color: #697C9A;
+}
+
+main .container .git-user .git-user-right span {
+  font-size: 1.6rem;
+  color: #0079FF;
+  display: block;
+  margin: 7px 0 20px;
+}
+
+main .container .git-user .git-user-right p {
+  font-size: 1.5rem;
+  line-height: 25px;
+  color: #4B6A9B;
+}
+
+main .container .git-user .git-user-right .git-user-stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 32px 0 39px;
+  background-color: #f6f8ff;
+  padding: 15px 31px;
+  border-radius: 10px;
+}
+
+main .container .git-user .git-user-right .git-user-stats li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+main .container .git-user .git-user-right .git-user-stats li label {
+  display: block;
+  font-size: 1.3rem;
+  color: #4B6A9B;
+}
+
+main .container .git-user .git-user-right .git-user-stats li span {
+  font-size: 1.5rem;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #2B3442;
+  margin: 0;
+}
+
+main .container .git-user .git-user-right .git-user-stats li:last-child {
+  position: relative;
+  left: 15px;
+}
+
+main .container .git-user .git-user-right .git-user-footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 20px;
+  -webkit-column-gap: 65px;
+          column-gap: 65px;
+}
+
+main .container .git-user .git-user-right .git-user-footer ul li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  color: #4B6A9B;
+}
+
+main .container .git-user .git-user-right .git-user-footer ul li a {
+  color: inherit;
+  width: 175px;
+  overflow: hidden;
+  display: block;
+}
+
+main .container .git-user .git-user-right .git-user-footer ul li a:hover {
+  text-decoration: underline;
+}
+
+main .container .git-user .git-user-right .git-user-footer ul li svg {
+  margin-right: 19px;
+}
+
+main .container .git-user .git-user-right .git-user-footer ul li svg path {
+  fill: #4B6A9B;
+}
+
+main .container .git-user .git-user-right .git-user-footer ul li:nth-child(3) label, main .container .git-user .git-user-right .git-user-footer ul li:nth-child(2) label {
+  margin-left: -3px;
+}
+
+main .container .git-user .git-user-right .git-user-footer ul li:last-child {
+  margin-top: -9px;
+}
+
+main .container .git-user .git-user-right .git-user-footer ul li:last-child label {
+  margin: -2px 0 0px -3px;
+}
+
+main .container .git-user .git-user-right .git-user-footer ul li.unavailable {
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  main .container .git-user {
+    position: relative;
+    padding: 40px 40px 40px 40px;
+  }
+  main .container .git-user .git-user-image {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+  }
+  main .container .git-user .git-user-right {
+    padding-left: 0;
+  }
+  main .container .git-user .git-user-right .git-user-titles {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-left: 150px;
+    padding-top: 7px;
+  }
+  main .container .git-user .git-user-right .git-user-titles label {
+    margin: 5px 0 2px;
+  }
+  main .container .git-user .git-user-right span {
+    padding-left: 150px;
+    margin-top: 0;
+    margin-bottom: 44px;
+  }
+  main .container .git-user .git-user-right .git-user-stats {
+    margin: 32px 0;
+  }
+  main .container .git-user .git-user-right .git-user-stats li span {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  main .container .git-user {
+    padding: 32px 24px 48px 24px;
+  }
+  main .container .git-user .git-user-image {
+    height: 70px;
+    width: 70px;
+    top: 31px;
+    left: 24px;
+  }
+  main .container .git-user .git-user-right .git-user-titles {
+    padding-left: 90px;
+    padding-top: 2px;
+  }
+  main .container .git-user .git-user-right .git-user-titles h2 {
+    font-size: 1.6rem;
+    line-height: 23px;
+  }
+  main .container .git-user .git-user-right .git-user-titles label {
+    font-size: 1.3rem;
+    margin: 0;
+  }
+  main .container .git-user .git-user-right p {
+    font-size: 1.3rem;
+  }
+  main .container .git-user .git-user-right span {
+    font-size: 1.3rem;
+    padding-left: 90px;
+    margin-bottom: 30px;
+  }
+  main .container .git-user .git-user-right .git-user-stats {
+    margin: 24px 0;
+    padding: 15px 15px;
+  }
+  main .container .git-user .git-user-right .git-user-stats li {
+    text-align: center;
+  }
+  main .container .git-user .git-user-right .git-user-stats li label {
+    font-size: 1.1rem;
+  }
+  main .container .git-user .git-user-right .git-user-stats li span {
+    font-size: 1.6rem;
+  }
+  main .container .git-user .git-user-right .git-user-stats li:last-child {
+    left: 0;
+  }
+  main .container .git-user .git-user-right .git-user-footer ul {
+    row-gap: 15px;
+    -webkit-column-gap: 0;
+            column-gap: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  main .container .git-user .git-user-right .git-user-footer ul li {
+    font-size: 1.3rem;
+  }
+  main .container .git-user .git-user-right .git-user-footer ul li:nth-child(3) label, main .container .git-user .git-user-right .git-user-footer ul li:nth-child(2) label {
+    margin-left: 0;
+  }
+  main .container .git-user .git-user-right .git-user-footer ul li:last-child {
+    margin-top: 0;
+  }
+  main .container .git-user .git-user-right .git-user-footer ul li:last-child label {
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  main .container {
+    max-width: 621px;
+    padding: 0 24px;
+  }
+}
+
+main.dark {
+  background-color: #141D2F;
+}
+
+main.dark .container header h1 {
+  color: white;
+}
+
+main.dark .container header .mode span {
+  color: white;
+}
+
+main.dark .container header .mode svg path {
+  fill: white;
+}
+
+main.dark .container header .mode svg.dark {
+  display: none;
+}
+
+main.dark .container header .mode svg.light {
+  display: block;
+}
+
+main.dark .container header .mode:hover {
+  opacity: 0.5;
+}
+
+main.dark .container .search {
+  background-color: #1E2A47;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+main.dark .container .search div input[type="text"] {
+  background-color: #1E2A47;
+  color: white;
+}
+
+main.dark .container .search div input[type="text"]::-webkit-input-placeholder {
+  color: white;
+}
+
+main.dark .container .search div input[type="text"]::-moz-placeholder {
+  color: white;
+}
+
+main.dark .container .search div input[type="text"]:-ms-input-placeholder {
+  color: white;
+}
+
+main.dark .container .search div input[type="text"]:-moz-placeholder {
+  color: white;
+}
+
+main.dark .container .git-user {
+  background-color: #1E2A47;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+main.dark .container .git-user .git-user-right .git-user-titles label, main.dark .container .git-user .git-user-right .git-user-titles h2 {
+  color: white;
+}
+
+main.dark .container .git-user .git-user-right p {
+  color: white;
+}
+
+main.dark .container .git-user .git-user-right span {
+  color: #0079FF;
+}
+
+main.dark .container .git-user .git-user-right .git-user-stats {
+  background-color: #141D2F;
+}
+
+main.dark .container .git-user .git-user-right .git-user-stats li label, main.dark .container .git-user .git-user-right .git-user-stats li span {
+  color: white;
+}
+
+main.dark .container .git-user .git-user-right .git-user-footer ul li svg path {
+  fill: white;
+}
+
+main.dark .container .git-user .git-user-right .git-user-footer ul li label {
+  color: white;
+}
