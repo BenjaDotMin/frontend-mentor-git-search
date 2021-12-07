@@ -309,6 +309,7 @@ main .container .git-user .git-user-right .git-user-titles {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  gap: 20px;
 }
 
 main .container .git-user .git-user-right .git-user-titles h2 {

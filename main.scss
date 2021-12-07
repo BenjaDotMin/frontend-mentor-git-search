@@ -77,7 +77,7 @@ main{display: grid; place-items: center; height: 100vh; background-color: #F5F8F
     .git-user{display: flex; justify-content: flex-start; padding: 48px 48px 47px 48px; box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567); border-radius: 15px; background-color: $white;
       .git-user-image{height: 117px; width: 117px; border-radius: 100%; overflow: hidden;}
       .git-user-right{padding: 0 0 0 37px; flex:1;
-        .git-user-titles{display: flex; align-items: center; justify-content: space-between;
+        .git-user-titles{display: flex; align-items: center; justify-content: space-between; gap:20px;
           h2{font-size: 2.6rem; font-weight: 700; line-height: 30px;}
           label{font-size: 1.5rem; color:$grey;}
         }
