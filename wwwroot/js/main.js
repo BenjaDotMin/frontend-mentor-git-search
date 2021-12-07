@@ -16,6 +16,7 @@ const gitWebsite = container.querySelector("#gitWebsite");
 const gitCompany = container.querySelector("#gitCompany");
 const gitImage = container.querySelector("#gitImage");
 const errorMessage = container.querySelector("#error");
+const modeType = container.querySelector("#modeType");
 
 const fetchUser = async user => {
     await fetch(`https://api.github.com/users/${user}`).then(r => r.json()).then(d => {
@@ -43,6 +44,7 @@ searchBtn.addEventListener("click", () => {
     searchInput.value && fetchUser(searchInput.value);
 })
 
-mode.addEventListener("click", () => container.classList.toggle("dark"));
-
-//fetchUser("octocat");
+mode.addEventListener("click", () => {
+    container.classList.toggle("dark");
+    container.classList.contains("dark") ? modeType.innerHTML = "LIGHT" : modeType.innerHTML = "DARK";
+});
