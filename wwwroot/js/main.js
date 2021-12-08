@@ -24,10 +24,9 @@ const fetchUser = async user => {
             errorMessage.style.display="block";
         }else{
             errorMessage.style.display="none";           
-            gitName.innerHTML = d.name ? d.name : "This profile has no name!";
+            gitName.innerHTML = d.name ? d.name : "No name found";
             gitTag.innerHTML = "@"+d.login;
             gitBio.innerHTML = d.bio ? d.bio : "This profile has no bio"; 
-            gitJoined.innerHTML = "Joined "+d.created_at;
             gitRepos.innerHTML = d.public_repos;
             gitFollowers.innerHTML = d.followers;
             gitFollowing.innerHTML = d.following;
@@ -36,6 +35,13 @@ const fetchUser = async user => {
             gitWebsite.innerHTML = d.blog ? d.blog : "Not available";
             gitCompany.innerHTML = d.company ? d.company : "Not available";
             gitImage.src = d.avatar_url;
+
+            //concat dates - credit to Astragenius: https://www.frontendmentor.io/profile/astragenius
+            const newDate = new Date(d.created_at);
+            const day = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(newDate);
+            const month = new Intl.DateTimeFormat('en', {month: 'short' }).format(newDate);
+            const year = new Intl.DateTimeFormat('en', {year: 'numeric'}).format(newDate);
+            gitJoined.innerHTML = `Joined ${day} ${month} ${year}`;
         }
     });
 }
@@ -48,3 +54,5 @@ mode.addEventListener("click", () => {
     container.classList.toggle("dark");
     container.classList.contains("dark") ? modeType.innerHTML = "LIGHT" : modeType.innerHTML = "DARK";
 });
+
+
